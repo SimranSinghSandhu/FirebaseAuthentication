@@ -21,6 +21,7 @@ class RegistrationViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    // Sign Up Using Email and Password
     @IBAction func signUpButtonPressed(_ sender: Any) {
         SVProgressHUD.show()
         
@@ -36,6 +37,7 @@ class RegistrationViewController: UIViewController {
         }
     }
     
+    // Segue to SignOut View COntroller When user Registered Sucessfully.
     private func SegueToDestinationViewController() {
         let destinationVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "SignOutViewController") as! SignOutViewController
         navigationController?.pushViewController(destinationVC, animated: true)

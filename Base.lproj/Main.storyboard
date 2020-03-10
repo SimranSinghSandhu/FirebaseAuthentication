@@ -68,8 +68,7 @@
                                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="registerButtonPressed:" destination="OK3-Md-rMm" eventType="touchUpInside" id="iSQ-YX-C1Y"/>
-                                                    <segue destination="ggV-Za-dsP" kind="show" id="rD9-Gc-HDv"/>
+                                                    <segue destination="ggV-Za-dsP" kind="show" id="feZ-Jr-1Bl"/>
                                                 </connections>
                                             </button>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="firebase" translatesAutoresizingMaskIntoConstraints="NO" id="72J-fo-Y3q">
@@ -82,27 +81,46 @@
                                                 <rect key="frame" x="87" y="890" width="240" height="47"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                             </view>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k3u-cG-h1k">
+                                                <rect key="frame" x="30" y="650" width="354" height="50"/>
+                                                <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="5ct-6B-MyX"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                                <size key="titleShadowOffset" width="1" height="1"/>
+                                                <state key="normal" title="Sign-In with Google ">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="googleSignInButtonPressed:" destination="OK3-Md-rMm" eventType="touchUpInside" id="uSW-BM-4JK"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="Kz8-fY-8a1" firstAttribute="leading" secondItem="VD3-l5-t5m" secondAttribute="leading" constant="30" id="0Zu-tT-MAd"/>
-                                            <constraint firstAttribute="trailing" secondItem="4IF-EZ-k9O" secondAttribute="trailing" constant="30" id="9A1-xx-rHy"/>
+                                            <constraint firstItem="Kz8-fY-8a1" firstAttribute="leading" relation="lessThanOrEqual" secondItem="VD3-l5-t5m" secondAttribute="leading" constant="30" id="0Zu-tT-MAd"/>
+                                            <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="4IF-EZ-k9O" secondAttribute="trailing" constant="30" id="9A1-xx-rHy"/>
                                             <constraint firstItem="72J-fo-Y3q" firstAttribute="top" secondItem="VD3-l5-t5m" secondAttribute="top" id="9wz-cy-QVk"/>
+                                            <constraint firstItem="k3u-cG-h1k" firstAttribute="top" secondItem="6be-Uz-huf" secondAttribute="bottom" constant="60" id="E6Q-us-0VL"/>
                                             <constraint firstItem="6be-Uz-huf" firstAttribute="top" secondItem="4IF-EZ-k9O" secondAttribute="bottom" constant="50" id="Fx0-Lt-PTj"/>
                                             <constraint firstItem="Kz8-fY-8a1" firstAttribute="top" secondItem="wk8-Ws-Y3Z" secondAttribute="bottom" constant="30" id="Hcd-rw-Pz1"/>
-                                            <constraint firstItem="4IF-EZ-k9O" firstAttribute="leading" secondItem="VD3-l5-t5m" secondAttribute="leading" constant="30" id="IPb-r6-Biy"/>
+                                            <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="k3u-cG-h1k" secondAttribute="trailing" constant="30" id="I20-KI-bBO"/>
+                                            <constraint firstItem="4IF-EZ-k9O" firstAttribute="leading" relation="lessThanOrEqual" secondItem="VD3-l5-t5m" secondAttribute="leading" constant="30" id="IPb-r6-Biy"/>
                                             <constraint firstItem="72J-fo-Y3q" firstAttribute="leading" secondItem="VD3-l5-t5m" secondAttribute="leading" constant="75" id="MT5-aZ-S3Z"/>
-                                            <constraint firstAttribute="trailing" secondItem="wk8-Ws-Y3Z" secondAttribute="trailing" constant="30" id="NJG-89-TvP"/>
+                                            <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="wk8-Ws-Y3Z" secondAttribute="trailing" constant="30" id="NJG-89-TvP"/>
                                             <constraint firstItem="hbP-Qg-75y" firstAttribute="centerX" secondItem="VD3-l5-t5m" secondAttribute="centerX" id="Sq6-eX-e4N"/>
-                                            <constraint firstAttribute="trailing" secondItem="Kz8-fY-8a1" secondAttribute="trailing" constant="30" id="UOm-9l-bYM"/>
-                                            <constraint firstItem="6be-Uz-huf" firstAttribute="leading" secondItem="VD3-l5-t5m" secondAttribute="leading" constant="30" id="Vfv-YJ-Ufx"/>
+                                            <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="Kz8-fY-8a1" secondAttribute="trailing" constant="30" id="UOm-9l-bYM"/>
+                                            <constraint firstItem="6be-Uz-huf" firstAttribute="leading" relation="lessThanOrEqual" secondItem="VD3-l5-t5m" secondAttribute="leading" constant="30" id="Vfv-YJ-Ufx"/>
                                             <constraint firstAttribute="bottom" secondItem="hbP-Qg-75y" secondAttribute="bottom" constant="19" id="eEQ-vZ-SZp"/>
                                             <constraint firstItem="4IF-EZ-k9O" firstAttribute="top" secondItem="Kz8-fY-8a1" secondAttribute="bottom" constant="60" id="iUG-DQ-0JZ"/>
-                                            <constraint firstAttribute="trailing" secondItem="6be-Uz-huf" secondAttribute="trailing" constant="30" id="jHc-9q-MZD"/>
+                                            <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="6be-Uz-huf" secondAttribute="trailing" constant="30" id="jHc-9q-MZD"/>
                                             <constraint firstAttribute="trailing" secondItem="72J-fo-Y3q" secondAttribute="trailing" constant="75" id="kAF-P1-vjC"/>
                                             <constraint firstItem="hbP-Qg-75y" firstAttribute="width" secondItem="VD3-l5-t5m" secondAttribute="width" multiplier="0.57971" id="lja-ti-W66"/>
+                                            <constraint firstItem="k3u-cG-h1k" firstAttribute="leading" relation="lessThanOrEqual" secondItem="VD3-l5-t5m" secondAttribute="leading" constant="30" id="tJf-Co-tRy"/>
                                             <constraint firstItem="hbP-Qg-75y" firstAttribute="top" secondItem="6be-Uz-huf" secondAttribute="bottom" constant="300" id="tYN-aC-w5y"/>
-                                            <constraint firstItem="wk8-Ws-Y3Z" firstAttribute="leading" secondItem="VD3-l5-t5m" secondAttribute="leading" constant="30" id="tiw-kk-xsb"/>
+                                            <constraint firstItem="wk8-Ws-Y3Z" firstAttribute="leading" relation="lessThanOrEqual" secondItem="VD3-l5-t5m" secondAttribute="leading" constant="30" id="tiw-kk-xsb"/>
                                             <constraint firstItem="wk8-Ws-Y3Z" firstAttribute="top" secondItem="72J-fo-Y3q" secondAttribute="bottom" constant="30" id="wBc-Vc-pc6"/>
                                         </constraints>
                                     </view>
@@ -213,15 +231,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Congratulation you have successfully logged into Firebase." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cQA-AJ-RFr">
-                                <rect key="frame" x="30" y="244" width="354" height="100"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="P82-br-IWq"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EgL-ow-E79">
                                 <rect key="frame" x="30" y="494" width="354" height="50"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -238,19 +247,53 @@
                                     <action selector="signOutButtonPressed:" destination="Dpp-vU-S4d" eventType="touchUpInside" id="oh2-WM-dx2"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dvm-Lb-z75">
+                                <rect key="frame" x="30" y="194" width="354" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="65G-UX-lHg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <color key="textColor" red="1" green="0.29020225529999999" blue="0.26243108450000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HNk-FX-b9w">
+                                <rect key="frame" x="30" y="44" width="354" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="MnN-ML-VkF"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Congratulation you have successfully logged into Firebase." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cQA-AJ-RFr">
+                                <rect key="frame" x="30" y="294" width="354" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="zT4-h7-Le8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="cQA-AJ-RFr" firstAttribute="top" secondItem="hsa-t3-BwR" secondAttribute="top" constant="200" id="C70-YS-17R"/>
-                            <constraint firstItem="EgL-ow-E79" firstAttribute="top" secondItem="cQA-AJ-RFr" secondAttribute="bottom" constant="150" id="QBW-Cg-h9K"/>
-                            <constraint firstAttribute="trailing" secondItem="cQA-AJ-RFr" secondAttribute="trailing" constant="30" id="QNt-tA-asR"/>
+                            <constraint firstItem="EgL-ow-E79" firstAttribute="top" secondItem="cQA-AJ-RFr" secondAttribute="bottom" constant="100" id="3Jl-Tt-Pi5"/>
+                            <constraint firstItem="cQA-AJ-RFr" firstAttribute="leading" secondItem="hsa-t3-BwR" secondAttribute="leading" constant="30" id="BK1-3l-PfB"/>
+                            <constraint firstItem="hsa-t3-BwR" firstAttribute="trailing" secondItem="cQA-AJ-RFr" secondAttribute="trailing" constant="30" id="Bby-En-j6J"/>
+                            <constraint firstItem="hsa-t3-BwR" firstAttribute="trailing" secondItem="Dvm-Lb-z75" secondAttribute="trailing" constant="30" id="D4q-LE-R6c"/>
+                            <constraint firstItem="HNk-FX-b9w" firstAttribute="top" secondItem="hsa-t3-BwR" secondAttribute="top" id="JCS-6H-KDb"/>
+                            <constraint firstItem="Dvm-Lb-z75" firstAttribute="leading" secondItem="hsa-t3-BwR" secondAttribute="leading" constant="30" id="RXa-dV-aHl"/>
                             <constraint firstItem="hsa-t3-BwR" firstAttribute="trailing" secondItem="EgL-ow-E79" secondAttribute="trailing" constant="30" id="df4-c3-mKk"/>
                             <constraint firstItem="EgL-ow-E79" firstAttribute="leading" secondItem="hsa-t3-BwR" secondAttribute="leading" constant="30" id="hqv-lT-LLc"/>
-                            <constraint firstItem="cQA-AJ-RFr" firstAttribute="leading" secondItem="hsa-t3-BwR" secondAttribute="leading" constant="30" id="mp0-ch-XZW"/>
+                            <constraint firstItem="hsa-t3-BwR" firstAttribute="trailing" secondItem="HNk-FX-b9w" secondAttribute="trailing" constant="30" id="hsU-fN-ypY"/>
+                            <constraint firstItem="cQA-AJ-RFr" firstAttribute="top" secondItem="Dvm-Lb-z75" secondAttribute="bottom" constant="50" id="s7c-T0-pj6"/>
+                            <constraint firstItem="Dvm-Lb-z75" firstAttribute="top" secondItem="HNk-FX-b9w" secondAttribute="bottom" id="trr-tH-CSx"/>
+                            <constraint firstItem="HNk-FX-b9w" firstAttribute="leading" secondItem="hsa-t3-BwR" secondAttribute="leading" constant="30" id="uiQ-6b-ZBH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hsa-t3-BwR"/>
                     </view>
                     <navigationItem key="navigationItem" id="1Xn-dv-VOo"/>
+                    <connections>
+                        <outlet property="displayNameLabel" destination="Dvm-Lb-z75" id="J5X-D5-dFU"/>
+                        <outlet property="profilePictureImageView" destination="HNk-FX-b9w" id="3oB-WH-hxL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nrz-VV-xan" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
