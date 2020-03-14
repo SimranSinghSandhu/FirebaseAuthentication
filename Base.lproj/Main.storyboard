@@ -21,7 +21,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VD3-l5-t5m" userLabel="ContentView">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="956"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email Addess" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wk8-Ws-Y3Z">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Email Addess" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wk8-Ws-Y3Z">
                                                 <rect key="frame" x="30" y="230" width="354" height="60"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -30,7 +30,7 @@
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Kz8-fY-8a1">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Kz8-fY-8a1">
                                                 <rect key="frame" x="30" y="320" width="354" height="60"/>
                                                 <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
                                                 <constraints>
@@ -97,6 +97,22 @@
                                                     <action selector="googleSignInButtonPressed:" destination="OK3-Md-rMm" eventType="touchUpInside" id="uSW-BM-4JK"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XaE-U8-OS2">
+                                                <rect key="frame" x="30" y="760" width="354" height="50"/>
+                                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="SMx-9s-xbs"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                                <size key="titleShadowOffset" width="1" height="1"/>
+                                                <state key="normal" title="Sign-In Using Phone Number">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="DCX-Zi-Tgv" kind="show" id="Vqe-iB-GGZ"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -112,7 +128,10 @@
                                             <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="wk8-Ws-Y3Z" secondAttribute="trailing" constant="30" id="NJG-89-TvP"/>
                                             <constraint firstItem="hbP-Qg-75y" firstAttribute="centerX" secondItem="VD3-l5-t5m" secondAttribute="centerX" id="Sq6-eX-e4N"/>
                                             <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="Kz8-fY-8a1" secondAttribute="trailing" constant="30" id="UOm-9l-bYM"/>
+                                            <constraint firstItem="XaE-U8-OS2" firstAttribute="top" secondItem="k3u-cG-h1k" secondAttribute="bottom" constant="60" id="UoT-cj-DJu"/>
                                             <constraint firstItem="6be-Uz-huf" firstAttribute="leading" relation="lessThanOrEqual" secondItem="VD3-l5-t5m" secondAttribute="leading" constant="30" id="Vfv-YJ-Ufx"/>
+                                            <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="XaE-U8-OS2" secondAttribute="trailing" constant="30" id="bGw-Vt-yQV"/>
+                                            <constraint firstItem="XaE-U8-OS2" firstAttribute="leading" relation="lessThanOrEqual" secondItem="VD3-l5-t5m" secondAttribute="leading" constant="30" id="doU-Jb-f8v"/>
                                             <constraint firstAttribute="bottom" secondItem="hbP-Qg-75y" secondAttribute="bottom" constant="19" id="eEQ-vZ-SZp"/>
                                             <constraint firstItem="4IF-EZ-k9O" firstAttribute="top" secondItem="Kz8-fY-8a1" secondAttribute="bottom" constant="60" id="iUG-DQ-0JZ"/>
                                             <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="6be-Uz-huf" secondAttribute="trailing" constant="30" id="jHc-9q-MZD"/>
@@ -222,6 +241,91 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gmo-fX-bwJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1800" y="-41"/>
+        </scene>
+        <!--Phone Number View Controller-->
+        <scene sceneID="BZJ-jC-em1">
+            <objects>
+                <viewController id="DCX-Zi-Tgv" customClass="PhoneNumberViewController" customModule="FirebaseAuthentication" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PMS-Sh-jm0">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Phone Number" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SSl-gK-b2a">
+                                <rect key="frame" x="30" y="163" width="354" height="60"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="XUb-WX-vpm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" keyboardType="phonePad" textContentType="tel"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="OTP" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4To-wM-djb">
+                                <rect key="frame" x="100" y="273" width="214" height="60"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="ynn-IH-E0T"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="one-time-code"/>
+                            </textField>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="T7a-nG-XZM">
+                                <rect key="frame" x="30" y="383" width="354" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aH0-DF-i5e">
+                                        <rect key="frame" x="0.0" y="0.0" width="162" height="50"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                        <size key="titleShadowOffset" width="1" height="1"/>
+                                        <state key="normal" title="Phone">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="phoneBtnPressed:" destination="DCX-Zi-Tgv" eventType="touchUpInside" id="hhu-V1-R7W"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FIk-nr-8JJ">
+                                        <rect key="frame" x="192" y="0.0" width="162" height="50"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                        <size key="titleShadowOffset" width="1" height="1"/>
+                                        <state key="normal" title="Verify">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="verifyBtnPressed:" destination="DCX-Zi-Tgv" eventType="touchUpInside" id="PTj-PH-4Au"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="w9O-Zo-o9P"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="T7a-nG-XZM" secondAttribute="trailing" constant="30" id="2bb-ID-Fj6"/>
+                            <constraint firstItem="H7j-oi-Wnc" firstAttribute="trailing" secondItem="4To-wM-djb" secondAttribute="trailing" constant="100" id="3zh-hc-0yP"/>
+                            <constraint firstItem="4To-wM-djb" firstAttribute="top" secondItem="SSl-gK-b2a" secondAttribute="bottom" constant="50" id="8ou-dI-zA4"/>
+                            <constraint firstItem="T7a-nG-XZM" firstAttribute="top" secondItem="4To-wM-djb" secondAttribute="bottom" constant="50" id="B9J-uz-Agi"/>
+                            <constraint firstItem="SSl-gK-b2a" firstAttribute="leading" secondItem="H7j-oi-Wnc" secondAttribute="leading" constant="30" id="Bjc-ug-B7a"/>
+                            <constraint firstItem="4To-wM-djb" firstAttribute="leading" secondItem="H7j-oi-Wnc" secondAttribute="leading" constant="100" id="LLk-Kk-HFp"/>
+                            <constraint firstItem="SSl-gK-b2a" firstAttribute="top" secondItem="H7j-oi-Wnc" secondAttribute="top" constant="75" id="Mug-Jw-Aa9"/>
+                            <constraint firstItem="H7j-oi-Wnc" firstAttribute="trailing" secondItem="SSl-gK-b2a" secondAttribute="trailing" constant="30" id="mdF-tI-kHo"/>
+                            <constraint firstItem="T7a-nG-XZM" firstAttribute="leading" secondItem="H7j-oi-Wnc" secondAttribute="leading" constant="30" id="sWE-j8-Gyp"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="H7j-oi-Wnc"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="kPT-2A-HAo"/>
+                    <connections>
+                        <outlet property="otpTextField" destination="4To-wM-djb" id="WJV-nM-GL8"/>
+                        <outlet property="phoneNumberTextField" destination="SSl-gK-b2a" id="mLa-UN-Ohr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D2Z-7Q-uLP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="669.56521739130437" y="850.44642857142856"/>
         </scene>
         <!--Sign Out View Controller-->
         <scene sceneID="7KI-xF-DEh">
