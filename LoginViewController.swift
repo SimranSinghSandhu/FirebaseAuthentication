@@ -9,6 +9,8 @@
 import UIKit
 import Firebase
 import GoogleSignIn
+import FBSDKCoreKit
+import FBSDKLoginKit
 import SVProgressHUD
 
 class LoginViewController: UIViewController, UIGestureRecognizerDelegate {
@@ -76,5 +78,62 @@ class LoginViewController: UIViewController, UIGestureRecognizerDelegate {
     private func SegueToDestinationViewController() {
         let destinationVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "SignOutViewController") as! SignOutViewController
         navigationController?.pushViewController(destinationVC, animated: true)
+    }
+}
+
+extension LoginViewController {
+    
+    // Facebook Login using Custom Button.
+    @IBAction func facebookSignInButtonPressed(_ sender: Any) {
+        SVProgressHUD.show(withStatus: "Signing Into Facebook")
+        // Creating a Instance of Manager
+        let manager = LoginManager()
+        // Asking for Permissions from user
+        manager.logIn(permissions: ["public_profile", "email", "user_friends"], from: self) { (result, error) in
+           if error != nil {
+                // Error
+                print("Error =", error!)
+                SVProgressHUD.dismiss()
+           } else if result!.isCancelled {
+                // If User Cancelled the Facebook Login Midway
+                print("Cancelled")
+                SVProgressHUD.dismiss()
+           } else { // If User Successfully Login To Facebook
+            
+                print("Logged Into Facebook!")
+                print("Declined Permission =", result!.declinedPermissions) // Nil if all Permission are granted (Array)
+                print("Granted Permission =", result!.grantedPermissions)   // Nil if all Permission are Declined (Array)
+            
+                guard let token = AccessToken.current?.tokenString else {return}
+                
+                print("Token = ", token)
+            
+                // Sending TokenString to LogInto Firebase using Facebook.
+                self.signingIntoFirebase(with: token)
+                SVProgressHUD.dismiss()
+            }
+        }
+    }
+    
+    // Signing Into Firebase using Facebook Token
+    private func signingIntoFirebase(with facebookToken: String) {
+        
+        SVProgressHUD.show(withStatus: "Wait")
+        
+        let credentials = FacebookAuthProvider.credential(withAccessToken: facebookToken)
+           
+        // Signing in using Credentials
+        Auth.auth().signIn(with: credentials) { (result, error) in
+            if error != nil {
+                // Error
+                print("Error =", error!)
+                SVProgressHUD.dismiss()
+            } else {
+                // Login Sucessfull
+                print("User Signed Into Firebase using Facebook")
+                self.SegueToDestinationViewController()
+                SVProgressHUD.dismiss()
+            }
+        }
     }
 }

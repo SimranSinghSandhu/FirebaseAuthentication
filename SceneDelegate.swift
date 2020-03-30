@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import FBSDKLoginKit
+import FBSDKCoreKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -20,6 +22,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.window = self.window
+    }
+    
+   func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+    let openURLContext = Array(URLContexts).first
+        if openURLContext != nil {
+            if let URL = openURLContext?.url, let annotation = openURLContext?.options.annotation {
+                ApplicationDelegate.shared.application(UIApplication.shared, open: URL, sourceApplication: openURLContext?.options.sourceApplication, annotation: annotation)
+            }
+        }
+        // Add any custom logic here.
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

@@ -22,6 +22,9 @@ class SignOutViewController: UIViewController {
         navigationItem.hidesBackButton = true
         // Do any additional setup after loading the view.
         
+        // Making the ImageView Circle. To make it a perfect Circle set your object with same height and Width and give cornerRadius of that object a value which will be half of the object's height or width.
+        profilePictureImageView.layer.cornerRadius = profilePictureImageView.frame.height/2
+        
         // Get UserDetails when View Loads (GoogleSignedInOnly)
         gettingCurrentUserDetails()
         
@@ -33,7 +36,13 @@ class SignOutViewController: UIViewController {
         
         // Setting the Profile Pic of the Google Account Holder into UIImageView
         if let profilePictureURL = user?.photoURL {
-            profilePictureImageView.kf.setImage(with: profilePictureURL)
+//            profilePictureImageView.kf.setImage(with: profilePictureURL)
+            
+           
+            let resizingProcessor = ResizingImageProcessor(referenceSize: CGSize(width: self.profilePictureImageView.frame.size.width * UIScreen.main.scale, height: self.profilePictureImageView.frame.size.height * UIScreen.main.scale))
+            
+            profilePictureImageView.kf.setImage(with: profilePictureURL, placeholder: nil, options: [.processor(resizingProcessor)], progressBlock: nil, completionHandler: nil)
+            
         }
         // Showing Display Name of Google Account Holder in Label
         if let displayName = user?.displayName {
@@ -53,4 +62,20 @@ class SignOutViewController: UIViewController {
             SVProgressHUD.dismiss()
         }
     }
+}
+
+extension UIImage {
+    
+    
+    class func scaleImageToSize(img: UIImage, size: CGSize) -> UIImage {
+        UIGraphicsBeginImageContext(size)
+        
+        img.draw(in: CGRect(origin: CGPoint.zero, size: size))
+        
+        let scaledImage = UIGraphicsGetImageFromCurrentImageContext()
+        
+        UIGraphicsEndImageContext()
+        return scaledImage!
+    }
+    
 }
